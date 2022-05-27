@@ -1,0 +1,18 @@
+server:
+  port: 7002
+
+eureka:
+  instance:
+    hostname: eureka7002.com
+  client:
+    #默认是 true，服务端设置为false
+    registerWithEureka: false
+    #默认是 true，服务端设置为false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://eureka7001.com:7001/eureka/
+  server:
+    #关闭自我保护机制，默认是开启的，如果开启的话客户端提供的服务不会过期
+    enable-self-preservation: true
+    #当关闭自我保护机制的时候，设置 清理无效服务的间隔时间，默认60s
+    #eviction-interval-timer-in-ms: 2000

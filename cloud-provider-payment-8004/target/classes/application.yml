@@ -1,0 +1,17 @@
+server:
+  port: 8004
+spring:
+  application:
+    name: payment-order-service
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://eureka7001.com:7001/eureka/
+  instance:
+    instance-id: payment8004
+    prefer-ip-address: true
+
+

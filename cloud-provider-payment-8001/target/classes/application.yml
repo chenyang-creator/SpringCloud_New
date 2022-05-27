@@ -1,0 +1,28 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: cloud-payment-service
+  datasource:
+    username: root
+    password: 333
+    url: jdbc:mysql://localhost:3306/springcloud
+    type: com.alibaba.druid.pool.DruidDataSource
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.yc.entities
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+  instance:
+    instance-id: payment8001
+    prefer-ip-address: true
+    #发心跳的时间间隔，默认是30s
+    lease-renewal-interval-in-seconds: 10
+    #Eureka服务端在收到最后一次心跳后等待时间上限，默认是90s，超时剔除服务
+    #只有当Eureka服务的自我保护机制关闭的时候，超过这个时间才会清除服务
+    lease-expiration-duration-in-seconds: 20
