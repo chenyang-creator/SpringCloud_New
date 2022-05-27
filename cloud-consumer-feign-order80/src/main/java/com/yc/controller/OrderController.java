@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class OrderController {
-    String name = "aaa";
+    String age = "aaa";
+
     private final PaymentFeignService paymentFeignService;
 
     public OrderController(PaymentFeignService paymentFeignService) {
